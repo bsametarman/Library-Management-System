@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
 using LibraryManagementSystem.Entities.Concrete;
 
 namespace LibraryManagementSystem.DataAccess.Concrete
 {
     public class LibraryContext : DbContext
     {
-        public LibraryContext() 
-            : base("name = LibraryManagementSystem")
+
+        public LibraryContext() : base("name=LibraryManagementSystemContext")
         {
+
         }
 
         public DbSet<Book> Books { get; set; }

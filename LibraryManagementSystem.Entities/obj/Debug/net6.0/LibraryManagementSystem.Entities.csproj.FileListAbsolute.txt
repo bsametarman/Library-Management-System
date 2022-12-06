@@ -1,0 +1,12 @@
+C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Entities\bin\Debug\net6.0\LibraryManagementSystem.Entities.deps.json
+C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Entities\bin\Debug\net6.0\LibraryManagementSystem.Entities.dll
+C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Entities\bin\Debug\net6.0\LibraryManagementSystem.Entities.pdb
+C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Entities\obj\Debug\net6.0\LibraryManagementSystem.Entities.csproj.AssemblyReference.cache
+C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Entities\obj\Debug\net6.0\LibraryManagementSystem.Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Entities\obj\Debug\net6.0\LibraryManagementSystem.Entities.AssemblyInfoInputs.cache
+C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Entities\obj\Debug\net6.0\LibraryManagementSystem.Entities.AssemblyInfo.cs
+C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Entities\obj\Debug\net6.0\LibraryManagementSystem.Entities.csproj.CoreCompileInputs.cache
+C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Entities\obj\Debug\net6.0\LibraryManagementSystem.Entities.dll
+C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Entities\obj\Debug\net6.0\refint\LibraryManagementSystem.Entities.dll
+C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Entities\obj\Debug\net6.0\LibraryManagementSystem.Entities.pdb
+C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Entities\obj\Debug\net6.0\ref\LibraryManagementSystem.Entities.dll
