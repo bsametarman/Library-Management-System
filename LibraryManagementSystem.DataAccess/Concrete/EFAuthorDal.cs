@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem.DataAccess.Concrete
 {
-    public class EFAuthorDal : EfEntityRepositoryBase<Author,LibraryContext>, IAuthorDal
+    public class EfAuthorDal : EfEntityRepositoryBase<Author,LibraryContext>, IAuthorDal
     {
     }
 }
