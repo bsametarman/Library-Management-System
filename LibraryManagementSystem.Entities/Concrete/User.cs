@@ -14,6 +14,7 @@ namespace LibraryManagementSystem.Entities.Concrete
         public List<int> PastBookId { get; set; }
         public string UserName { get; set; }
         public string UserSurname { get; set; }
+        public string Gender { get; set; }
         public string IdentityNumber { get; set; }
         public string BirthYear { get; set; }
         public string PhoneNumber { get; set; }
