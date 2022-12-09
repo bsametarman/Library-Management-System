@@ -19,7 +19,7 @@ namespace LibraryManagementSystem.Entities.Concrete
         public string BirthYear { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
-        public double Debt { get; set; }
+        public decimal Debt { get; set; }
         public int BorrowedBookNumber { get; set; }
 
     }
