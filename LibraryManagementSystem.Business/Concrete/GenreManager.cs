@@ -1,4 +1,6 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
+using LibraryManagementSystem.Business.ValidationRules.FluentValidation;
+using LibraryManagementSystem.Core.Aspects.Postsharp;
 using LibraryManagementSystem.DataAccess.Abstract;
 using LibraryManagementSystem.Entities.Concrete;
 using System;
@@ -18,6 +20,7 @@ namespace LibraryManagementSystem.Business.Concrete
             _genreDal = genreDal;
         }
 
+        [FluentValidationAspect(typeof(GenreValidator))]
         public void Add(Genre genre)
         {
             _genreDal.Add(genre);

@@ -18,7 +18,7 @@ namespace LibraryManagementSystem.Entities.Concrete
         public string BookName { get; set; }
 
         public int AuthorId { get; set; }
-        public virtual Author Author { get; set; }
+        public virtual Author? Author { get; set; }
 
         public string ISBN { get; set; }
         public string ShelfNumber { get; set; }

@@ -17,5 +17,11 @@ namespace WebAPI.Controllers
         {
             return genreService.GetAll();
         }
+
+        [HttpPost]
+        public void Add(Genre genre)
+        {
+            genreService.Add(genre);
+        }
     }
 }
