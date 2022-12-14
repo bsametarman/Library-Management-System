@@ -1,4 +1,5 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
+using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Abstract;
 using LibraryManagementSystem.Entities.Concrete;
 using System;
@@ -18,29 +19,32 @@ namespace LibraryManagementSystem.Business.Concrete
             _translatorDal = translatorDal;
         }
 
-        public void Add(Translator translator)
+        public IResult Add(Translator translator)
         {
             _translatorDal.Add(translator);
+            return new SuccessResult("Başarıyla eklendi !!!");
         }
 
-        public void Delete(Translator translator)
+        public IResult Delete(Translator translator)
         {
             _translatorDal.Delete(translator);
+            return new SuccessResult("Başarıyla silindi");
         }
 
-        public Translator Get(int id)
+        public IDataResult<Translator> Get(int id)
         {
-            return _translatorDal.Get(t => t.TranslatorId == id);
+            return new SuccessDataResult<Translator>(_translatorDal.Get(t => t.TranslatorId == id), "Başarıyla listelendi !!!");
         }
 
-        public List<Translator> GetAll()
+        public IDataResult<List<Translator>> GetAll()
         {
-            return _translatorDal.GetAll();
+            return new SuccessDataResult<List<Translator>>(_translatorDal.GetAll(), "Başarıyla listelendi !!!");
         }
 
-        public void Update(Translator translator)
+        public IResult Update(Translator translator)
         {
             _translatorDal.Update(translator);
+            return new SuccessResult("Başarıyla güncellendi !!!");
         }
     }
 }

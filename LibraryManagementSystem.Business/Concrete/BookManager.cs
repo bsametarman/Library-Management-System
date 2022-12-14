@@ -1,6 +1,7 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Business.ValidationRules.FluentValidation;
 using LibraryManagementSystem.Core.Aspects.Postsharp;
+using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Abstract;
 using LibraryManagementSystem.Entities.Concrete;
 using System;
@@ -21,29 +22,32 @@ namespace LibraryManagementSystem.Business.Concrete
         }
 
         [FluentValidationAspect(typeof(BookValidator))]
-        public void Add(Book book)
+        public IResult Add(Book book)
         {
             _bookDal.Add(book);
+            return new SuccessResult("Başarıyla Eklendi !!!");
         }
 
-        public void Delete(Book book)
+        public IResult Delete(Book book)
         {
             _bookDal.Delete(book);
+            return new SuccessResult("Başarıyla silindi !!!");
         }
 
-        public List<Book> GetAll()
+        public IDataResult<List<Book>> GetAll()
         {
-            return _bookDal.GetAll();
+            return new SuccessDataResult<List<Book>>(_bookDal.GetAll(), "Başarıyla getirildi !!!");
         }
 
-        public Book GetById(int id)
+        public IDataResult<Book> GetById(int id)
         {
-            return _bookDal.Get(p => p.BookId == id);
+            return new SuccessDataResult<Book>(_bookDal.Get(p => p.BookId == id), "Başarıyla getirildi !!!");
         }
 
-        public void Update(Book book)
+        public IResult Update(Book book)
         {
             _bookDal.Update(book);
+            return new SuccessResult("Başarıyla güncellendi");
         }
     }
 }

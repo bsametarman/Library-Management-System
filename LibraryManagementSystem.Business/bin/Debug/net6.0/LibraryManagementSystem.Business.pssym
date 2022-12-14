@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Symbols LinesOfCode="156" PostSharpLinesOfCode="0" EnhancedTypesCount="2" SchemaVersion="1" PostSharpVersion="6.10.16.0" xmlns="http://schemas.postsharp.org/2.0/symbols">
+<Symbols LinesOfCode="177" PostSharpLinesOfCode="0" EnhancedTypesCount="2" SchemaVersion="1" PostSharpVersion="6.10.16.0" xmlns="http://schemas.postsharp.org/2.0/symbols">
   <Class Class="#1=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.FluentValidationAspect">
-    <Instance Declaration="#2=M:[LibraryManagementSystem.Business]LibraryManagementSystem.Business.Concrete.BookManager::Add(LibraryManagementSystem.Entities.Concrete.Book)" Id="5f3c3ffc518edcde">
+    <Instance Declaration="#2=M:[LibraryManagementSystem.Business]LibraryManagementSystem.Business.Concrete.BookManager::Add(LibraryManagementSystem.Entities.Concrete.Book)" Id="5f3c3ffc2f007e32">
       <Target LinesAvoided="2">
         <JoinPoint Advising="#1" Description="#3=Wrapped by advice(s) OnEntry" Ordinal="0" />
       </Target>
     </Instance>
-    <Instance Declaration="#4=M:[LibraryManagementSystem.Business]LibraryManagementSystem.Business.Concrete.GenreManager::Add(LibraryManagementSystem.Entities.Concrete.Genre)" Id="5f3c3ffcf20f941e">
+    <Instance Declaration="#4=M:[LibraryManagementSystem.Business]LibraryManagementSystem.Business.Concrete.GenreManager::Add(LibraryManagementSystem.Entities.Concrete.Genre)" Id="5f3c3ffc2e65a762">
       <Target LinesAvoided="2">
         <JoinPoint Advising="#1" Description="#3" />
       </Target>

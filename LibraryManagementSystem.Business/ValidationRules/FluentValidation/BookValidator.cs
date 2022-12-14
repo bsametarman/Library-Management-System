@@ -13,7 +13,7 @@ namespace LibraryManagementSystem.Business.ValidationRules.FluentValidation
         public BookValidator()
         {
             RuleFor(b => b.BookName).NotEmpty();
-            RuleFor(b => b.BookName).Length(2, 30);
+            RuleFor(b => b.BookName).Length(2, 75);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using LibraryManagementSystem.Entities.Concrete;
+﻿using LibraryManagementSystem.Core.Utilities.Results;
+using LibraryManagementSystem.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,10 @@ namespace LibraryManagementSystem.Business.Abstract
 {
     public interface IUserService
     {
-        List<User> GetAll();
-        User Get(int id);
-        void Add(User user);
-        void Update(User user);
-        void Delete(User user);
+        IDataResult<List<User>> GetAll();
+        IDataResult<User> Get(int id);
+        IResult Add(User user);
+        IResult Update(User user);
+        IResult Delete(User user);
     }
 }

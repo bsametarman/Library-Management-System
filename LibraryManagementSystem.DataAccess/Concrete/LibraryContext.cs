@@ -18,6 +18,7 @@ namespace LibraryManagementSystem.DataAccess.Concrete
 
         public LibraryContext() : base("name=LibraryManagementSystemContext")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

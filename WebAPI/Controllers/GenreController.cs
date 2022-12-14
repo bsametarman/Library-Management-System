@@ -1,5 +1,6 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Business.Concrete;
+using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Concrete;
 using LibraryManagementSystem.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
@@ -8,20 +9,26 @@ namespace WebAPI.Controllers
 {
     [ApiController]
     [Route("api/genre")]
-    public class GenreController
+    public class GenreController : ControllerBase
     {
         IGenreService genreService = new GenreManager(new EfGenreDal());
 
         [HttpGet]
-        public List<Genre> GetAll()
+        public IActionResult GetAll()
         {
-            return genreService.GetAll();
+            var result = genreService.GetAll();
+            if (result.Success)
+                return Ok(new SuccessDataResult<List<Genre>>(result.Data, result.Message));
+            return BadRequest(result.Message);
         }
 
         [HttpPost]
-        public void Add(Genre genre)
+        public IActionResult Add(Genre genre)
         {
-            genreService.Add(genre);
+            var result = genreService.Add(genre);
+            if (result.Success)
+                return Ok(new SuccessResult(result.Message));
+            return BadRequest(result.Message);
         }
     }
 }

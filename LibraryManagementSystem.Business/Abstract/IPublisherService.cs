@@ -1,4 +1,5 @@
-﻿using LibraryManagementSystem.Entities.Concrete;
+﻿using LibraryManagementSystem.Core.Utilities.Results;
+using LibraryManagementSystem.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,11 @@ namespace LibraryManagementSystem.Business.Abstract
 {
     public interface IPublisherService
     {
-        List<Publisher> GetAll();
-        Publisher Get(int id);
-        void Add(Publisher publisher);
-        void Update(Publisher publisher);
-        void Delete(Publisher publisher);
+        IDataResult<List<Publisher>> GetAll();
+        IDataResult<Publisher> Get(int id);
+        IResult Add(Publisher publisher);
+        IResult Update(Publisher publisher);
+        IResult Delete(Publisher publisher);
 
     }
 }

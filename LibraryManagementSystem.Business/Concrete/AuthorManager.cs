@@ -1,4 +1,5 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
+using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Abstract;
 using LibraryManagementSystem.Entities.Concrete;
 using System;
@@ -18,29 +19,32 @@ namespace LibraryManagementSystem.Business.Concrete
             _authorDal = authorDal;
         }
 
-        public void Add(Author author)
+        public IResult Add(Author author)
         {
             _authorDal.Add(author);
+            return new SuccessResult("Başarıyla eklendi !!!");
         }
 
-        public void Delete(Author author)
+        public IResult Delete(Author author)
         {
             _authorDal.Delete(author);
+            return new SuccessResult("Başarıyla silindi !!!");
         }
 
-        public List<Author> GetAll()
+        public IDataResult<List<Author>> GetAll()
         {
-            return _authorDal.GetAll();
+            return new SuccessDataResult<List<Author>>(_authorDal.GetAll(), "Başarıyla listelendi !!!");
         }
 
-        public Author GetById(int id)
+        public IDataResult<Author> GetById(int id)
         {
-            return _authorDal.Get(a => a.AuthorId == id);
+            return new SuccessDataResult<Author>(_authorDal.Get(a => a.AuthorId == id), "Başarıyla getirildi !!!");
         }
 
-        public void Update(Author author)
+        public IResult Update(Author author)
         {
             _authorDal.Update(author);
+            return new SuccessResult("Başarıyla güncellendi !!!");
         }
     }
 }

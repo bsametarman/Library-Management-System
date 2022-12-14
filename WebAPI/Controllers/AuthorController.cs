@@ -1,5 +1,6 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Business.Concrete;
+using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Concrete;
 using LibraryManagementSystem.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
@@ -10,12 +11,15 @@ namespace WebAPI.Controllers
     [Route("api/author")]
     public class AuthorController : ControllerBase
     {
-        IAuthorService _authorService = new AuthorManager(new EfAuthorDal());
+        IAuthorService authorService = new AuthorManager(new EfAuthorDal());
 
         [HttpGet("getAll")]
-        public List<Author> GetAll()
+        public IActionResult GetAll()
         {
-            return _authorService.GetAll();
+            var result = authorService.GetAll();
+            if (result.Success)
+                return Ok(new SuccessDataResult<List<Author>>(result.Data, result.Message));
+            return BadRequest(result.Message);
         }
     }
 }

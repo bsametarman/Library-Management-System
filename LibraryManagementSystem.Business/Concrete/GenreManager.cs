@@ -1,6 +1,7 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Business.ValidationRules.FluentValidation;
 using LibraryManagementSystem.Core.Aspects.Postsharp;
+using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Abstract;
 using LibraryManagementSystem.Entities.Concrete;
 using System;
@@ -21,29 +22,32 @@ namespace LibraryManagementSystem.Business.Concrete
         }
 
         [FluentValidationAspect(typeof(GenreValidator))]
-        public void Add(Genre genre)
+        public IResult Add(Genre genre)
         {
             _genreDal.Add(genre);
+            return new SuccessResult("Başarıyla eklendi !!!");
         }
 
-        public void Delete(Genre genre)
+        public IResult Delete(Genre genre)
         {
             _genreDal.Delete(genre);
+            return new SuccessResult("Başarıyla silindi !!!");
         }
 
-        public Genre Get(int id)
+        public IDataResult<Genre> Get(int id)
         {
-            return _genreDal.Get(g => g.GenreId == id);
+            return new SuccessDataResult<Genre>(_genreDal.Get(g => g.GenreId == id), "Başarıyla listelendi !!!");
         }
 
-        public List<Genre> GetAll()
+        public IDataResult<List<Genre>> GetAll()
         {
-            return _genreDal.GetAll();
+            return new SuccessDataResult<List<Genre>>(_genreDal.GetAll(), "Başarıyla listelendi !!!");
         }
 
-        public void Update(Genre genre)
+        public IResult Update(Genre genre)
         {
             _genreDal.Update(genre);
+            return new SuccessResult("Başarıyla güncellendi !!!");
         }
     }
 }

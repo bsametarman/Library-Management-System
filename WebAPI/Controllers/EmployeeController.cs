@@ -1,5 +1,6 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Business.Concrete;
+using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Concrete;
 using LibraryManagementSystem.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
@@ -13,9 +14,12 @@ namespace WebAPI.Controllers
         IEmployeeService employeeService = new EmployeeManager(new EfEmployeeDal());
 
         [HttpGet]
-        public List<Employee> GetAll()
+        public IActionResult GetAll()
         {
-            return employeeService.GetAll();
+            var result = employeeService.GetAll();
+            if (result.Success)
+                return Ok(new SuccessDataResult<List<Employee>>(result.Data, result.Message));
+            return BadRequest(result.Message);
         }
     }
 }

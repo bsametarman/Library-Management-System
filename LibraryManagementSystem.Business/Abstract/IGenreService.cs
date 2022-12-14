@@ -1,4 +1,5 @@
-﻿using LibraryManagementSystem.Entities.Concrete;
+﻿using LibraryManagementSystem.Core.Utilities.Results;
+using LibraryManagementSystem.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,10 @@ namespace LibraryManagementSystem.Business.Abstract
 {
     public interface IGenreService
     {
-        List<Genre> GetAll();
-        Genre Get(int id);
-        void Add(Genre genre);
-        void Update(Genre genre);
-        void Delete(Genre genre);
+        IDataResult<List<Genre>> GetAll();
+        IDataResult<Genre> Get(int id);
+        IResult Add(Genre genre);
+        IResult Update(Genre genre);
+        IResult Delete(Genre genre);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Business.Concrete;
+using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Concrete;
 using LibraryManagementSystem.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
@@ -12,22 +13,33 @@ namespace WebAPI.Controllers
     {
         IBookService bookService = new BookManager(new EfBookDal());
 
-        [HttpGet("getallbooks")]
-        public List<Book> GetAll()
+        [HttpGet("getAllBooks")]
+        public IActionResult GetAll()
         {
-            return bookService.GetAll();
+            var result = bookService.GetAll();
+
+            if (result.Success)
+                return Ok(new SuccessDataResult<List<Book>>(result.Data, result.Message));
+
+            return BadRequest(result.Message);
         }
 
-        [HttpGet("getbyid")]
-        public Book GetById(int id)
+        [HttpGet("getById")]
+        public IActionResult GetById(int id)
         {
-            return bookService.GetById(id);
+            var result = bookService.GetById(id);
+            if (result.Success)
+                return Ok(new SuccessDataResult<Book>(result.Data, result.Message));
+            return BadRequest(result.Message);
         }
 
-        [HttpPost("addbook")]
-        public void Add(Book book)
+        [HttpPost("addBook")]
+        public IActionResult Add(Book book)
         {
-            bookService.Add(book);
+            var result = bookService.Add(book);
+            if (result.Success)
+                return Ok(new SuccessResult(result.Message));
+            return BadRequest(result.Message);
         }
     }
 }

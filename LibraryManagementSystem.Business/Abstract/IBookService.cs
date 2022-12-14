@@ -1,4 +1,5 @@
-﻿using LibraryManagementSystem.Entities.Concrete;
+﻿using LibraryManagementSystem.Core.Utilities.Results;
+using LibraryManagementSystem.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,11 @@ namespace LibraryManagementSystem.Business.Abstract
 {
     public interface IBookService
     {
-        List<Book> GetAll();
-        Book GetById(int id);
-        void Add(Book book);
-        void Update(Book book);
-        void Delete(Book book);
+        IDataResult<List<Book>> GetAll();
+        IDataResult<Book> GetById(int id);
+        IResult Add(Book book);
+        IResult Update(Book book);
+        IResult Delete(Book book);
 
     }
 }

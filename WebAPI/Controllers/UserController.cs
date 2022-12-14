@@ -1,5 +1,6 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Business.Concrete;
+using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Concrete;
 using LibraryManagementSystem.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
@@ -13,9 +14,12 @@ namespace WebAPI.Controllers
         IUserService userService = new UserManager(new EfUserDal());
 
         [HttpGet]
-        public List<User> GetAll()
+        public IActionResult GetAll()
         {
-            return userService.GetAll();
+            var result = userService.GetAll();
+            if (result.Success)
+                return Ok(new SuccessDataResult<List<User>>(result.Data, result.Message));
+            return BadRequest(result.Message);
         }
     }
 }

@@ -16,10 +16,8 @@ namespace LibraryManagementSystem.Entities.Concrete
         public List<int>? GenreId { get; set; } = new List<int>();
         public List<int>? TranslatorId { get; set; } = new List<int>();
         public string BookName { get; set; }
-
         public int AuthorId { get; set; }
         public virtual Author? Author { get; set; }
-
         public string ISBN { get; set; }
         public string ShelfNumber { get; set; }
         public bool AvailableState { get; set; }
