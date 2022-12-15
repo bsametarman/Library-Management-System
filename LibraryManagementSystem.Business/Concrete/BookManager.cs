@@ -1,6 +1,7 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Business.ValidationRules.FluentValidation;
-using LibraryManagementSystem.Core.Aspects.Postsharp;
+using LibraryManagementSystem.Core.Aspects.Postsharp.TransactionAspects;
+using LibraryManagementSystem.Core.Aspects.Postsharp.ValidationAspects;
 using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Abstract;
 using LibraryManagementSystem.Entities.Concrete;
@@ -22,6 +23,7 @@ namespace LibraryManagementSystem.Business.Concrete
         }
 
         [FluentValidationAspect(typeof(BookValidator))]
+        [TransactionScopeAspect]
         public IResult Add(Book book)
         {
             _bookDal.Add(book);
