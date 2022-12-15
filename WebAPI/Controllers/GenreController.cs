@@ -1,5 +1,6 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Business.Concrete;
+using LibraryManagementSystem.Business.DependencyResolvers.Ninject;
 using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Concrete;
 using LibraryManagementSystem.Entities.Concrete;
@@ -11,7 +12,7 @@ namespace WebAPI.Controllers
     [Route("api/genre")]
     public class GenreController : ControllerBase
     {
-        IGenreService genreService = new GenreManager(new EfGenreDal());
+        IGenreService genreService = InstanceFactory.GetInstance<IGenreService>();
 
         [HttpGet]
         public IActionResult GetAll()

@@ -78,3 +78,4 @@ C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\WebAPI\bin\Debug\n
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\WebAPI\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\WebAPI\bin\Debug\net6.0\System.Web.WebPages.dll
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\WebAPI\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\WebAPI\bin\Debug\net6.0\Ninject.dll

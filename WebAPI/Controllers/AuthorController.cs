@@ -1,5 +1,6 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Business.Concrete;
+using LibraryManagementSystem.Business.DependencyResolvers.Ninject;
 using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Concrete;
 using LibraryManagementSystem.Entities.Concrete;
@@ -11,7 +12,7 @@ namespace WebAPI.Controllers
     [Route("api/author")]
     public class AuthorController : ControllerBase
     {
-        IAuthorService authorService = new AuthorManager(new EfAuthorDal());
+        IAuthorService authorService = InstanceFactory.GetInstance<IAuthorService>();
 
         [HttpGet("getAll")]
         public IActionResult GetAll()

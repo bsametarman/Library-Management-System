@@ -1,5 +1,6 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Business.Concrete;
+using LibraryManagementSystem.Business.DependencyResolvers.Ninject;
 using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Concrete;
 using LibraryManagementSystem.Entities.Concrete;
@@ -11,7 +12,7 @@ namespace WebAPI.Controllers
     [Route("api/translator")]
     public class TranslatorController : ControllerBase
     {
-        ITranslatorService translatorService = new TranslatorManager(new EfTranslatorDal());
+        ITranslatorService translatorService = InstanceFactory.GetInstance<ITranslatorService>();
 
         [HttpGet]
         public IActionResult GetAll()
