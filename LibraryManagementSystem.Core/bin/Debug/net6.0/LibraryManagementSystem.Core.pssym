@@ -1,7 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Symbols LinesOfCode="123" PostSharpLinesOfCode="0" EnhancedTypesCount="1" SchemaVersion="1" PostSharpVersion="6.10.16.0" xmlns="http://schemas.postsharp.org/2.0/symbols">
+<Symbols LinesOfCode="217" PostSharpLinesOfCode="0" EnhancedTypesCount="4" SchemaVersion="1" PostSharpVersion="6.10.16.0" xmlns="http://schemas.postsharp.org/2.0/symbols">
   <Class Class="#1=T:[PostSharp]PostSharp.Serialization.PSerializableAttribute">
-    <Instance Declaration="#2=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.FluentValidationAspect" Id="b89c71951f051293">
+    <Instance Declaration="#2=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.ValidationAspects.FluentValidationAspect" Id="b89c7195f18565dc">
+      <Target />
+    </Instance>
+    <Instance Declaration="#3=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect" Id="b89c71959f9f5463">
+      <Target />
+    </Instance>
+    <Instance Declaration="#4=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.CacheAspect.CacheAspect" Id="b89c719572436522">
+      <Target />
+    </Instance>
+    <Instance Declaration="#5=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.CacheAspect.CacheRemoveAspect" Id="b89c7195b6a6323d">
       <Target />
     </Instance>
   </Class>

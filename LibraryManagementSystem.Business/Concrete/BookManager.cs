@@ -1,7 +1,9 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Business.ValidationRules.FluentValidation;
+using LibraryManagementSystem.Core.Aspects.Postsharp.CacheAspect;
 using LibraryManagementSystem.Core.Aspects.Postsharp.TransactionAspects;
 using LibraryManagementSystem.Core.Aspects.Postsharp.ValidationAspects;
+using LibraryManagementSystem.Core.CrossCuttingConcerns.Caching.Microsoft;
 using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Abstract;
 using LibraryManagementSystem.Entities.Concrete;
@@ -36,6 +38,7 @@ namespace LibraryManagementSystem.Business.Concrete
             return new SuccessResult("Başarıyla silindi !!!");
         }
 
+        [CacheAspect(typeof(MemoryCacheManager), 60)]
         public IDataResult<List<Book>> GetAll()
         {
             return new SuccessDataResult<List<Book>>(_bookDal.GetAll(), "Başarıyla getirildi !!!");

@@ -1,4 +1,5 @@
 ﻿using PostSharp.Aspects;
+using PostSharp.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Transactions;
 
 namespace LibraryManagementSystem.Core.Aspects.Postsharp.TransactionAspects
 {
+    [PSerializable]
     public class TransactionScopeAspect : OnMethodBoundaryAspect
     {
         private TransactionScopeOption _option;
