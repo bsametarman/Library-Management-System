@@ -31,7 +31,7 @@ namespace LibraryManagementSystem.Business.Concrete
             return new SuccessResult("Başarıyla silindi !!!");
         }
 
-        public IDataResult<User> Get(int id)
+        public IDataResult<User> GetById(int id)
         {
             return new SuccessDataResult<User>(_userDal.Get(u => u.UserId == id), "Başarıyla listelendi !!!");
         }

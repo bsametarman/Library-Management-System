@@ -14,7 +14,7 @@ namespace WebAPI.Controllers
     {
         IGenreService genreService = InstanceFactory.GetInstance<IGenreService>();
 
-        [HttpGet]
+        [HttpGet("getAllGenres")]
         public IActionResult GetAll()
         {
             var result = genreService.GetAll();
@@ -23,10 +23,37 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
-        [HttpPost]
+        [HttpGet("getById")]
+        public IActionResult GetById(int id)
+        {
+            var result = genreService.GetById(id);
+            if (result.Success)
+                return Ok(new SuccessDataResult<Genre>(result.Data, result.Message));
+            return BadRequest(result.Message);
+        }
+
+        [HttpPost("addGenre")]
         public IActionResult Add(Genre genre)
         {
             var result = genreService.Add(genre);
+            if (result.Success)
+                return Ok(new SuccessResult(result.Message));
+            return BadRequest(result.Message);
+        }
+
+        [HttpDelete("deleteGenre")]
+        public IActionResult Delete(Genre genre)
+        {
+            var result = genreService.Delete(genre);
+            if (result.Success)
+                return Ok(new SuccessResult(result.Message));
+            return BadRequest(result.Message);
+        }
+
+        [HttpPost("updateGenre")]
+        public IActionResult Update(Genre genre)
+        {
+            var result = genreService.Update(genre);
             if (result.Success)
                 return Ok(new SuccessResult(result.Message));
             return BadRequest(result.Message);

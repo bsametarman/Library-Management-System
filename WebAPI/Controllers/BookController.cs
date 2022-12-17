@@ -42,5 +42,23 @@ namespace WebAPI.Controllers
                 return Ok(new SuccessResult(result.Message));
             return BadRequest(result.Message);
         }
+
+        [HttpDelete("deleteBook")]
+        public IActionResult Delete(Book book)
+        {
+            var result = bookService.Delete(book);
+            if (result.Success)
+                return Ok(new SuccessResult(result.Message));
+            return BadRequest(result.Message);
+        }
+
+        [HttpPost("updateBook")]
+        public IActionResult Update(Book book)
+        {
+            var result = bookService.Update(book);
+            if (result.Success)
+                return Ok(new SuccessResult(result.Message));
+            return BadRequest(result.Message);
+        }
     }
 }

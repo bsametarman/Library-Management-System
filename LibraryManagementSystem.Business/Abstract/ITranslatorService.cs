@@ -11,7 +11,7 @@ namespace LibraryManagementSystem.Business.Abstract
     public interface ITranslatorService
     {
         IDataResult<List<Translator>> GetAll();
-        IDataResult<Translator> Get(int id);
+        IDataResult<Translator> GetById(int id);
         IResult Add(Translator translator);
         IResult Update(Translator translator);
         IResult Delete(Translator translator);

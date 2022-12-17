@@ -11,7 +11,7 @@ namespace LibraryManagementSystem.Business.Abstract
     public interface IGenreService
     {
         IDataResult<List<Genre>> GetAll();
-        IDataResult<Genre> Get(int id);
+        IDataResult<Genre> GetById(int id);
         IResult Add(Genre genre);
         IResult Update(Genre genre);
         IResult Delete(Genre genre);

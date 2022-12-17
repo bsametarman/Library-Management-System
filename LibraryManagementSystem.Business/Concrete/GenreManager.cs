@@ -1,6 +1,6 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Business.ValidationRules.FluentValidation;
-using LibraryManagementSystem.Core.Aspects.Postsharp;
+using LibraryManagementSystem.Core.Aspects.Postsharp.ValidationAspects;
 using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Abstract;
 using LibraryManagementSystem.Entities.Concrete;
@@ -34,7 +34,7 @@ namespace LibraryManagementSystem.Business.Concrete
             return new SuccessResult("Başarıyla silindi !!!");
         }
 
-        public IDataResult<Genre> Get(int id)
+        public IDataResult<Genre> GetById(int id)
         {
             return new SuccessDataResult<Genre>(_genreDal.Get(g => g.GenreId == id), "Başarıyla listelendi !!!");
         }
