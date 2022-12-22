@@ -1,9 +1,11 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Business.ValidationRules.FluentValidation;
 using LibraryManagementSystem.Core.Aspects.Postsharp.CacheAspect;
+using LibraryManagementSystem.Core.Aspects.Postsharp.LogAspects;
 using LibraryManagementSystem.Core.Aspects.Postsharp.TransactionAspects;
 using LibraryManagementSystem.Core.Aspects.Postsharp.ValidationAspects;
 using LibraryManagementSystem.Core.CrossCuttingConcerns.Caching.Microsoft;
+using LibraryManagementSystem.Core.CrossCuttingConcerns.Logging.Log4Net.Loggers;
 using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Abstract;
 using LibraryManagementSystem.Entities.Concrete;
@@ -26,12 +28,14 @@ namespace LibraryManagementSystem.Business.Concrete
 
         [FluentValidationAspect(typeof(BookValidator))]
         [TransactionScopeAspect]
+        [LogAspect(typeof(DatabaseLogger))]
         public IResult Add(Book book)
         {
             _bookDal.Add(book);
             return new SuccessResult("Başarıyla Eklendi !!!");
         }
 
+        [LogAspect(typeof(DatabaseLogger))]
         public IResult Delete(Book book)
         {
             _bookDal.Delete(book);
@@ -39,16 +43,19 @@ namespace LibraryManagementSystem.Business.Concrete
         }
 
         [CacheAspect(typeof(MemoryCacheManager), 60)]
+        [LogAspect(typeof(DatabaseLogger))]
         public IDataResult<List<Book>> GetAll()
         {
             return new SuccessDataResult<List<Book>>(_bookDal.GetAll(), "Başarıyla getirildi !!!");
         }
 
+        [LogAspect(typeof(DatabaseLogger))]
         public IDataResult<Book> GetById(int id)
         {
             return new SuccessDataResult<Book>(_bookDal.Get(p => p.BookId == id), "Başarıyla getirildi !!!");
         }
 
+        [LogAspect(typeof(DatabaseLogger))]
         public IResult Update(Book book)
         {
             _bookDal.Update(book);

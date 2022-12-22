@@ -1,16 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Symbols LinesOfCode="217" PostSharpLinesOfCode="0" EnhancedTypesCount="4" SchemaVersion="1" PostSharpVersion="6.10.16.0" xmlns="http://schemas.postsharp.org/2.0/symbols">
+<Symbols LinesOfCode="303" PostSharpLinesOfCode="0" EnhancedTypesCount="5" SchemaVersion="1" PostSharpVersion="6.10.16.0" xmlns="http://schemas.postsharp.org/2.0/symbols">
   <Class Class="#1=T:[PostSharp]PostSharp.Serialization.PSerializableAttribute">
-    <Instance Declaration="#2=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.ValidationAspects.FluentValidationAspect" Id="b89c7195f18565dc">
+    <Instance Declaration="#2=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.ValidationAspects.FluentValidationAspect" Id="b89c7195b1772b5a">
       <Target />
     </Instance>
-    <Instance Declaration="#3=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect" Id="b89c71959f9f5463">
+    <Instance Declaration="#3=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect" Id="b89c7195f0296db7">
       <Target />
     </Instance>
-    <Instance Declaration="#4=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.CacheAspect.CacheAspect" Id="b89c719572436522">
+    <Instance Declaration="#4=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.LogAspects.LogAspect" Id="b89c719581598bf2">
       <Target />
     </Instance>
-    <Instance Declaration="#5=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.CacheAspect.CacheRemoveAspect" Id="b89c7195b6a6323d">
+    <Instance Declaration="#5=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.CacheAspect.CacheAspect" Id="b89c7195fd07c932">
+      <Target />
+    </Instance>
+    <Instance Declaration="#6=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.CacheAspect.CacheRemoveAspect" Id="b89c7195fccbe150">
       <Target />
     </Instance>
   </Class>

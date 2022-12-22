@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[6.4.1, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.2, )"
+            },
             "PostSharp": {
               "target": "Package",
               "version": "[6.10.16, )"
@@ -59,6 +63,10 @@
             "System.Runtime.Caching": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.15, )"
             }
           },
           "imports": [
