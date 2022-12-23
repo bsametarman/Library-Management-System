@@ -1,53 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Symbols LinesOfCode="198" PostSharpLinesOfCode="0" EnhancedTypesCount="2" SchemaVersion="1" PostSharpVersion="6.10.16.0" xmlns="http://schemas.postsharp.org/2.0/symbols">
   <Class Class="#1=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.ValidationAspects.FluentValidationAspect">
-    <Instance Declaration="#2=M:[LibraryManagementSystem.Business]LibraryManagementSystem.Business.Concrete.BookManager::Add(LibraryManagementSystem.Entities.Concrete.Book)" Id="5f3c3ffc1f399347">
+    <Instance Declaration="#2=M:[LibraryManagementSystem.Business]LibraryManagementSystem.Business.Concrete.BookManager::Add(LibraryManagementSystem.Entities.Concrete.Book)" Id="5f3c3ffc192b29ff">
       <Target LinesAvoided="2">
         <JoinPoint Advising="#1" Description="#3=Wrapped by advice(s) OnEntry" Ordinal="0" />
       </Target>
     </Instance>
-    <Instance Declaration="#4=M:[LibraryManagementSystem.Business]LibraryManagementSystem.Business.Concrete.GenreManager::Add(LibraryManagementSystem.Entities.Concrete.Genre)" Id="5f3c3ffc4c13115a">
+    <Instance Declaration="#4=M:[LibraryManagementSystem.Business]LibraryManagementSystem.Business.Concrete.GenreManager::Add(LibraryManagementSystem.Entities.Concrete.Genre)" Id="5f3c3ffc9678df03">
       <Target LinesAvoided="2">
         <JoinPoint Advising="#1" Description="#3" Ordinal="8" />
       </Target>
     </Instance>
   </Class>
   <Class Class="#5=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect">
-    <Instance Declaration="#2" Id="5f3c3ffcd669a728">
+    <Instance Declaration="#2" Id="5f3c3ffc87f527b3">
       <Target LinesAvoided="6">
         <JoinPoint Advising="#5" Description="#6=Wrapped by advice(s) OnEntry, OnSuccess, OnExit" />
       </Target>
     </Instance>
   </Class>
   <Class Class="#7=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.LogAspects.LogAspect">
-    <Instance Declaration="#2" Id="5f3c3ffcd2afa156">
+    <Instance Declaration="#2" Id="5f3c3ffc8fb36e33">
       <Target LinesAvoided="2">
         <JoinPoint Advising="#7" Description="#3" Ordinal="2" />
       </Target>
     </Instance>
-    <Instance Declaration="#8=M:[LibraryManagementSystem.Business]LibraryManagementSystem.Business.Concrete.BookManager::Delete(LibraryManagementSystem.Entities.Concrete.Book)" Id="5f3c3ffc57545c7c">
+    <Instance Declaration="#8=M:[LibraryManagementSystem.Business]LibraryManagementSystem.Business.Concrete.BookManager::Delete(LibraryManagementSystem.Entities.Concrete.Book)" Id="5f3c3ffcaa9f344e">
       <Target LinesAvoided="2">
         <JoinPoint Advising="#7" Description="#3" Ordinal="3" />
       </Target>
     </Instance>
-    <Instance Declaration="#9=M:[LibraryManagementSystem.Business]LibraryManagementSystem.Business.Concrete.BookManager::GetAll()" Id="5f3c3ffcf73e1e7f">
+    <Instance Declaration="#9=M:[LibraryManagementSystem.Business]LibraryManagementSystem.Business.Concrete.BookManager::GetAll()" Id="5f3c3ffc2ec6e25c">
       <Target LinesAvoided="2">
         <JoinPoint Advising="#7" Description="#3" Ordinal="4" />
       </Target>
     </Instance>
-    <Instance Declaration="#10=M:[LibraryManagementSystem.Business]LibraryManagementSystem.Business.Concrete.BookManager::GetById(System.Int32)" Id="5f3c3ffcbec6af05">
+    <Instance Declaration="#10=M:[LibraryManagementSystem.Business]LibraryManagementSystem.Business.Concrete.BookManager::GetById(System.Int32)" Id="5f3c3ffcd0a461b9">
       <Target LinesAvoided="2">
         <JoinPoint Advising="#7" Description="#3" Ordinal="6" />
       </Target>
     </Instance>
-    <Instance Declaration="#11=M:[LibraryManagementSystem.Business]LibraryManagementSystem.Business.Concrete.BookManager::Update(LibraryManagementSystem.Entities.Concrete.Book)" Id="5f3c3ffca5894d97">
+    <Instance Declaration="#11=M:[LibraryManagementSystem.Business]LibraryManagementSystem.Business.Concrete.BookManager::Update(LibraryManagementSystem.Entities.Concrete.Book)" Id="5f3c3ffcc7f77659">
       <Target LinesAvoided="2">
         <JoinPoint Advising="#7" Description="#3" Ordinal="7" />
       </Target>
     </Instance>
   </Class>
   <Class Class="#12=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.CacheAspect.CacheAspect">
-    <Instance Declaration="#9" Id="5f3c3ffcd66ef87c">
+    <Instance Declaration="#9" Id="5f3c3ffce932cff3">
       <Target LinesAvoided="2">
         <JoinPoint Advising="#12" Description="#13=Intercepted by OnInvoke" Ordinal="5" />
       </Target>

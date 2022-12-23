@@ -1,5 +1,6 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Business.ValidationRules.FluentValidation;
+using LibraryManagementSystem.Core.Aspects.Postsharp.AuthorizationAspects;
 using LibraryManagementSystem.Core.Aspects.Postsharp.CacheAspect;
 using LibraryManagementSystem.Core.Aspects.Postsharp.LogAspects;
 using LibraryManagementSystem.Core.Aspects.Postsharp.TransactionAspects;
@@ -44,6 +45,7 @@ namespace LibraryManagementSystem.Business.Concrete
 
         [CacheAspect(typeof(MemoryCacheManager), 60)]
         [LogAspect(typeof(DatabaseLogger))]
+        [SecuredOperation(Roles = "Admin")]
         public IDataResult<List<Book>> GetAll()
         {
             return new SuccessDataResult<List<Book>>(_bookDal.GetAll(), "Başarıyla getirildi !!!");
