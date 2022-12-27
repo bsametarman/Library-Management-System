@@ -1,19 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Symbols LinesOfCode="303" PostSharpLinesOfCode="0" EnhancedTypesCount="5" SchemaVersion="1" PostSharpVersion="6.10.16.0" xmlns="http://schemas.postsharp.org/2.0/symbols">
+<Symbols LinesOfCode="319" PostSharpLinesOfCode="0" EnhancedTypesCount="6" SchemaVersion="1" PostSharpVersion="6.10.16.0" xmlns="http://schemas.postsharp.org/2.0/symbols">
   <Class Class="#1=T:[PostSharp]PostSharp.Serialization.PSerializableAttribute">
-    <Instance Declaration="#2=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.ValidationAspects.FluentValidationAspect" Id="b89c7195b1772b5a">
+    <Instance Declaration="#2=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.ValidationAspects.FluentValidationAspect" Id="b89c71953b59fa2f">
       <Target />
     </Instance>
-    <Instance Declaration="#3=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect" Id="b89c7195f0296db7">
+    <Instance Declaration="#3=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.TransactionAspects.TransactionScopeAspect" Id="b89c7195afb6b55b">
       <Target />
     </Instance>
-    <Instance Declaration="#4=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.LogAspects.LogAspect" Id="b89c719581598bf2">
+    <Instance Declaration="#4=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.LogAspects.LogAspect" Id="b89c719566e74a56">
       <Target />
     </Instance>
-    <Instance Declaration="#5=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.CacheAspect.CacheAspect" Id="b89c7195fd07c932">
+    <Instance Declaration="#5=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.CacheAspect.CacheAspect" Id="b89c7195814689a2">
       <Target />
     </Instance>
-    <Instance Declaration="#6=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.CacheAspect.CacheRemoveAspect" Id="b89c7195fccbe150">
+    <Instance Declaration="#6=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.CacheAspect.CacheRemoveAspect" Id="b89c71959b429118">
+      <Target />
+    </Instance>
+    <Instance Declaration="#7=T:[LibraryManagementSystem.Core]LibraryManagementSystem.Core.Aspects.Postsharp.AuthorizationAspects.SecuredOperation" Id="b89c7195df2f9754">
       <Target />
     </Instance>
   </Class>

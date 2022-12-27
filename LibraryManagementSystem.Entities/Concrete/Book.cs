@@ -21,7 +21,7 @@ namespace LibraryManagementSystem.Entities.Concrete
         public string ISBN { get; set; }
         public string ShelfNumber { get; set; }
         public bool AvailableState { get; set; }
-        public DateTime ReturnDate { get; set; }
+        public DateTime? ReturnDate { get; set; }
         public string Publisher { get; set; }
         public string PublishedYear { get; set; }
         public string ShortSummary { get; set; }

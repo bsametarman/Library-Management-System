@@ -643,7 +643,9 @@
           "EntityFramework": "6.4.4",
           "FluentValidation": "6.4.1",
           "LibraryManagementSystem.Entities": "1.0.0",
+          "Microsoft.AspNet.Mvc": "5.2.9",
           "Newtonsoft.Json": "13.0.2",
+          "Ninject": "3.3.6",
           "PostSharp": "6.10.16",
           "System.Runtime.Caching": "7.0.0",
           "log4net": "2.0.15"
