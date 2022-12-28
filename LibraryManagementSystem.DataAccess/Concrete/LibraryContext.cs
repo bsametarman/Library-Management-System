@@ -24,10 +24,12 @@ namespace LibraryManagementSystem.DataAccess.Concrete
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Author>()
-                .HasMany(a => a.Books)
-                .WithRequired(b => b.Author)
-                .HasForeignKey(b => b.AuthorId);
+            // Configration for combining db tables (not being used anymore)
+
+            //modelBuilder.Entity<Author>()
+            //    .HasMany(a => a.Books)
+            //    .WithRequired(b => b.Author)
+            //    .HasForeignKey(b => b.AuthorId);
         }
 
         public DbSet<Book> Books { get; set; }

@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LibraryManagementSystem.Entities.ComplexTypes;
 
 namespace LibraryManagementSystem.Business.Concrete
 {
@@ -49,6 +50,13 @@ namespace LibraryManagementSystem.Business.Concrete
         public IDataResult<List<Book>> GetAll()
         {
             return new SuccessDataResult<List<Book>>(_bookDal.GetAll(), "Başarıyla getirildi !!!");
+        }
+
+        [CacheAspect(typeof(MemoryCacheManager), 60)]
+        [LogAspect(typeof(DatabaseLogger))]
+		public IDataResult<List<BookDetail>> GetAllBooksWithDetails()
+        {
+	        return new SuccessDataResult<List<BookDetail>>(_bookDal.GetAllBooksWithDetails(), "Başarıyla listelendi!!!");
         }
 
         [LogAspect(typeof(DatabaseLogger))]

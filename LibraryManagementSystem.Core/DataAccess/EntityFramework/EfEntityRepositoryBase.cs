@@ -45,15 +45,17 @@ namespace LibraryManagementSystem.Core.DataAccess.EntityFramework
         {
             using (TContext context = new TContext())
             {
-                try
-                {
-                    return filter == null ? context.Set<TEntity>().Include("Author").ToList() : context.Set<TEntity>().Where(filter).Include("Author").ToList();
-                }
-                catch (Exception e)
-                {
+                // Using include to combine db tables (not being used anymore)
 
-                    return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList();
-                }
+                //try
+                //{
+                    //return filter == null ? context.Set<TEntity>().Include("Author").ToList() : context.Set<TEntity>().Where(filter).Include("Author").ToList();
+                //}
+                //catch (Exception e)
+                //{
+
+	            return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList();
+                //}
             }
         }
 
