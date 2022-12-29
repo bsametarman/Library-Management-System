@@ -13,7 +13,7 @@ namespace LibraryManagementSystem.Entities.Concrete
     {
         [Key]
         public int BookId { get; set; }
-        public List<int>? GenreId { get; set; } = new List<int>();
+        public int GenreId { get; set; }
         public int TranslatorId { get; set; }
         public string BookName { get; set; }
         public int AuthorId { get; set; }

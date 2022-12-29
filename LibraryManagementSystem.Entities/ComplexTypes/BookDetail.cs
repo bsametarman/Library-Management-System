@@ -16,6 +16,8 @@ namespace LibraryManagementSystem.Entities.ComplexTypes
 		public int? TranslatorId { get; set; }
 		public string TranslatorName { get; set; }
 		public string TranslatorEmail { get; set; }
+		public int GenreId { get; set; }
+		public string GenreName { get; set; }
 		public string ISBN { get; set; }
 		public string ShelfNumber { get; set; }
 		public bool AvailableState { get; set; }
