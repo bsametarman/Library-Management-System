@@ -1,6 +1,7 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Abstract;
+using LibraryManagementSystem.Entities.ComplexTypes;
 using LibraryManagementSystem.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,11 @@ namespace LibraryManagementSystem.Business.Concrete
         public IDataResult<List<Author>> GetAll()
         {
             return new SuccessDataResult<List<Author>>(_authorDal.GetAll(), "Başarıyla listelendi !!!");
+        }
+
+        public IDataResult<List<AuthorDetail>> GetAllAuthorsWithDetails()
+        {
+            return new SuccessDataResult<List<AuthorDetail>>(_authorDal.GetAllAuthorsWithDetails(), "Başarıyla listelendi!!!");
         }
 
         public IDataResult<Author> GetById(int id)

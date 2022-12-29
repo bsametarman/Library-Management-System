@@ -16,6 +16,7 @@ namespace LibraryManagementSystem.Entities.Concrete
         public int AuthorId { get; set; }
         [JsonIgnore]
         public virtual ICollection<Book>? Books { get; set; }
+        public int BookId { get; set; }
         public string AuthorName { get; set; }
         public string Gender { get; set; }
         public string BirthYear { get; set; }

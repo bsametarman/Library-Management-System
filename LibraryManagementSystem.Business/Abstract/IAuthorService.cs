@@ -1,4 +1,5 @@
 ﻿using LibraryManagementSystem.Core.Utilities.Results;
+using LibraryManagementSystem.Entities.ComplexTypes;
 using LibraryManagementSystem.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace LibraryManagementSystem.Business.Abstract
     {
         IDataResult<List<Author>> GetAll();
         IDataResult<Author> GetById(int id);
+        IDataResult<List<AuthorDetail>> GetAllAuthorsWithDetails();
         IResult Add(Author author);
         IResult Update(Author author);
         IResult Delete(Author author);

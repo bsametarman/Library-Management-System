@@ -3,6 +3,7 @@ using LibraryManagementSystem.Business.Concrete;
 using LibraryManagementSystem.Business.DependencyResolvers.Ninject;
 using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Concrete;
+using LibraryManagementSystem.Entities.ComplexTypes;
 using LibraryManagementSystem.Entities.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
@@ -23,7 +24,16 @@ namespace WebAPI.Controllers
             return BadRequest(result.Message);
         }
 
-        [HttpGet("getById")]
+		[HttpGet("getAllAuthorsWithDetails")]
+		public IActionResult GetAllAuthorsWithDetails()
+		{
+			var result = authorService.GetAllAuthorsWithDetails();
+			if (result.Success)
+				return Ok(new SuccessDataResult<List<AuthorDetail>>(result.Data, result.Message));
+			return BadRequest(result.Message);
+		}
+
+		[HttpGet("getById")]
         public IActionResult GetById(int id)
         {
             var result = authorService.GetById(id);
