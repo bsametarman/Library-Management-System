@@ -13,7 +13,7 @@ namespace LibraryManagementSystem.Entities.ComplexTypes
 		public string BookName { get; set; }
 		public string AuthorName { get; set; }
 		public string AuthorEmail { get; set; }
-		public int? TranslatorId { get; set; }
+		public int TranslatorId { get; set; }
 		public string TranslatorName { get; set; }
 		public string TranslatorEmail { get; set; }
 		public int GenreId { get; set; }

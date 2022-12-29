@@ -15,7 +15,7 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
 
 		public IActionResult Index()
 		{
-			var books = _bookService.GetAll().Data;
+			var books = _bookService.GetAllBooksWithDetails().Data;
 			return View(books);
 		}
 

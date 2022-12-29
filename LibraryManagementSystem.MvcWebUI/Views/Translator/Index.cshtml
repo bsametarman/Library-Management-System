@@ -2,11 +2,39 @@
 @{
 }
 
-@foreach (var item in Model)
-{
-	<div class="row">
-		<div class="col-md-4">@item.TranslatorName</div>
-		<div class="col-md-4">@item.Gender</div>
-		<div class="col-md-4">@item.Email</div>
+<div class="text-center">
+	<div class="font-weight-bold h3" style="margin: 25px 0 25px 0">Translators</div>		
+</div>
+
+@for (int i = 0; i < Model.Count; i++)
+{	
+	@if (i % 4 == 0)
+	{
+		if (i > 0)
+		{
+			@:</div>
+		}
+		@:<div class="row">
+	}
+	<div class="col-md-6">
+		<div class="card mb-4 box-shadow">
+			<div class="card-body">
+				<div class="text-center">
+					<div class="text-muted">@Model[i].TranslatorName</div>
+					<ul class="list-unstyled mt-3 mb-4">
+						<li>Email: @Model[i].Email</li>
+						<li>Birth year: @Model[i].BirthYear</li>
+						<li>Death year: @Model[i].DeathYear</li>
+						<li>Internet site: @Model[i].InternetSite</li>
+						<li>@Model[i].TranslatorId</li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
+}
+
+@if (Model.Count > 0)
+{
+	@:</div>
 }

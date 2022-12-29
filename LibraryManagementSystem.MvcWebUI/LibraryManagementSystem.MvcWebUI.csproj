@@ -15,4 +15,8 @@
     <ProjectReference Include="..\LibraryManagementSystem.Business\LibraryManagementSystem.Business.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="Views\User\signup.cshtml" />
+  </ItemGroup>
+
 </Project>

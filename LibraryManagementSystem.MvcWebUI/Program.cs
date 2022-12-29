@@ -13,6 +13,10 @@ builder.Services.AddTransient<ITranslatorDal, EfTranslatorDal>();
 builder.Services.AddTransient<IBookService, BookManager>();
 builder.Services.AddTransient<IBookDal, EfBookDal>();
 
+builder.Services.AddTransient<IUserService, UserManager>();
+builder.Services.AddTransient<IUserDal, EfUserDal>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
