@@ -12,11 +12,11 @@ namespace LibraryManagementSystem.Core.Utilities.Results
         {
         }
 
-        public SuccessResult(string message) : base(false, message)
+        public SuccessResult(string message) : base(true, message)
         {
         }
 
-        public SuccessResult() : base(false)
+        public SuccessResult() : base(true)
         {
         }
     }

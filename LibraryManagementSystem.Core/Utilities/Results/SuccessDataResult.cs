@@ -20,11 +20,11 @@ namespace LibraryManagementSystem.Core.Utilities.Results
         {
         }
 
-        public SuccessDataResult(string message) : base(default, false, message)
+        public SuccessDataResult(string message) : base(default, true, message)
         {
         }
 
-        public SuccessDataResult() : base(default, false)
+        public SuccessDataResult() : base(default, true)
         {
         }
 
