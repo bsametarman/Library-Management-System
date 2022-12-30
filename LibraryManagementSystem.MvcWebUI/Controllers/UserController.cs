@@ -14,10 +14,10 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
 			_userService = userService;
 		}
 
-		public IActionResult Index()
-		{
-			return View();
-		}
+		//public IActionResult Index()
+		//{
+		//	return View();
+		//}
 
 		public IActionResult SignIn()
 		{
@@ -60,6 +60,12 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
 			if (result.Success)
 				return RedirectToAction("SignInSuccess");
 			return RedirectToAction("SignIn");
+		}
+
+		public IActionResult Users()
+		{
+			var results = _userService.GetAll().Data;
+			return View(results);
 		}
 	}
 }

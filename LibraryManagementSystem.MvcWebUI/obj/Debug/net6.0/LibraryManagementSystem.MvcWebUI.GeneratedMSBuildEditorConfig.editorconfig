@@ -24,6 +24,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/bsame/Desktop/Projeler vs/C\#/LibraryManagementSystem/LibraryManagementSystem.MvcWebUI/Views/Genre/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VucmVcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bsame/Desktop/Projeler vs/C\#/LibraryManagementSystem/LibraryManagementSystem.MvcWebUI/Views/Genre/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VucmVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/bsame/Desktop/Projeler vs/C\#/LibraryManagementSystem/LibraryManagementSystem.MvcWebUI/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -62,6 +70,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/bsame/Desktop/Projeler vs/C\#/LibraryManagementSystem/LibraryManagementSystem.MvcWebUI/Views/User/SignUpSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxTaWduVXBTdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bsame/Desktop/Projeler vs/C\#/LibraryManagementSystem/LibraryManagementSystem.MvcWebUI/Views/User/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2Vycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/bsame/Desktop/Projeler vs/C\#/LibraryManagementSystem/LibraryManagementSystem.MvcWebUI/Views/_ViewImports.cshtml]

@@ -16,6 +16,8 @@ builder.Services.AddTransient<IBookDal, EfBookDal>();
 builder.Services.AddTransient<IUserService, UserManager>();
 builder.Services.AddTransient<IUserDal, EfUserDal>();
 
+builder.Services.AddTransient<IGenreService, GenreManager>();
+builder.Services.AddTransient<IGenreDal, EfGenreDal>();
 
 var app = builder.Build();
 

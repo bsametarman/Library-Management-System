@@ -1,0 +1,31 @@
+﻿@model LibraryManagementSystem.Entities.Concrete.Genre
+
+@{
+}
+
+<div class="container">
+	<div class="py-5 text-center">
+		@*<img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">*@
+	<h2>Add Genre</h2>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12 order-md-1">
+			<h4 class="mb-3">Genre Informations</h4>
+			<form method="post" asp-action="Add">
+				<div class="row">
+					<div class="col-md-6 mb-3">
+						<label asp-for="GenreName">Genre Name</label>
+						<input asp-for="GenreName" class="form-control" value="" required>
+						<div class="invalid-feedback">
+							Valid first name is required.
+						</div>
+					</div>
+				</div>
+				<div class="d-flex justify-content-center">
+				<button class="btn btn-outline-success btn-lg btn-block" style="width: 250px; height: 75px" type="submit">Add</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
