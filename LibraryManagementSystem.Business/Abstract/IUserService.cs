@@ -12,6 +12,7 @@ namespace LibraryManagementSystem.Business.Abstract
     {
         IDataResult<List<User>> GetAll();
         IDataResult<User> GetById(int id);
+        IResult GetByEmailAndPassword(string email, string password);
         IResult Add(User user);
         IResult Update(User user);
         IResult Delete(User user);

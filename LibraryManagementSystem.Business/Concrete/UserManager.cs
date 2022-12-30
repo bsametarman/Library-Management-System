@@ -1,10 +1,13 @@
 ﻿using LibraryManagementSystem.Business.Abstract;
+using LibraryManagementSystem.Core.Aspects.Postsharp.LogAspects;
 using LibraryManagementSystem.Core.Utilities.Results;
 using LibraryManagementSystem.DataAccess.Abstract;
+using LibraryManagementSystem.DataAccess.Concrete;
 using LibraryManagementSystem.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,7 +39,17 @@ namespace LibraryManagementSystem.Business.Concrete
             return new SuccessDataResult<User>(_userDal.Get(u => u.UserId == id), "Başarıyla listelendi !!!");
         }
 
-        public IDataResult<List<User>> GetAll()
+		public IResult GetByEmailAndPassword(string email, string password)
+		{
+            var result = _userDal.GetAll(u => u.Email == email && u.Password == password);
+
+            if(result.Count() != 0)
+				return new SuccessResult("Başarıyla getirildi !!!");
+            else
+                return new ErrorResult("Kişi bulunumadı!!!");
+		}
+
+		public IDataResult<List<User>> GetAll()
         {
             return new SuccessDataResult<List<User>>(_userDal.GetAll(), "Başarıyla listelendi !!!");
         }
