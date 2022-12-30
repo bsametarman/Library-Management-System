@@ -1,0 +1,49 @@
+﻿@model List<LibraryManagementSystem.Entities.Concrete.Employee>
+
+@{
+}
+
+<div class="text-center">
+	<div class="font-weight-bold h3" style="margin: 25px 0 25px 0">Employees</div>		
+</div>
+
+@for (int i = 0; i < Model.Count; i++)
+{
+
+	@if (i % 4 == 0)
+	{
+		if (i > 0)
+		{
+			@:</div>
+		}
+		@:<div class="row">
+	}
+
+
+		<div class="col-md-6">
+			<div class="card mb-4 box-shadow">
+				<div class="card-header">
+					<h4 class="my-0 font-weight-normal">@Model[i].EmployeeName @Model[i].EmployeeSurname</h4>
+				</div>
+				<div class="card-body">
+					<div class="text-center">
+						<small class="text-muted">Identity Number: @Model[i].IdentityNumber</small>
+						<ul class="list-unstyled mt-3 mb-4">
+							<li>Email: @Model[i].Email</li>
+							<li>Phone Number: @Model[i].PhoneNumber</li>
+							<li>Birth Year: @Model[i].BirthYear</li>
+							<li>Address: @Model[i].Address</li>
+							<li>@Model[i].EmployeeId</li>
+						</ul>
+						<button type="button" class="btn btn-lg btn-block btn-outline-primary">Details</button>
+					</div>
+				</div>
+			</div>
+		</div>
+}
+
+@if (Model.Count > 0)
+{
+	@:</div>
+}
+

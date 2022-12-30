@@ -19,6 +19,9 @@ builder.Services.AddTransient<IUserDal, EfUserDal>();
 builder.Services.AddTransient<IGenreService, GenreManager>();
 builder.Services.AddTransient<IGenreDal, EfGenreDal>();
 
+builder.Services.AddTransient<IEmployeeService, EmployeeManager>();
+builder.Services.AddTransient<IEmployeeDal, EfEmployeeDal>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
