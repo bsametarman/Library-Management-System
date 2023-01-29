@@ -19,21 +19,21 @@ namespace WebAPI.Controllers
         {
             var result = userService.GetAll();
             if (result.Success)
-                return Ok(new SuccessDataResult<List<User>>(result.Data, result.Message));
+                return Ok(new SuccessDataResult<List<AppUser>>(result.Data, result.Message));
             return BadRequest(result.Message);
         }
 
         [HttpGet("getById")]
-        public IActionResult GetById(int id)
+        public IActionResult GetById(string id)
         {
             var result = userService.GetById(id);
             if (result.Success)
-                return Ok(new SuccessDataResult<User>(result.Data, result.Message));
+                return Ok(new SuccessDataResult<AppUser>(result.Data, result.Message));
             return BadRequest(result.Message);
         }
 
         [HttpPost("addUser")]
-        public IActionResult Add(User user)
+        public IActionResult Add(AppUser user)
         {
             var result = userService.Add(user);
             if (result.Success)
@@ -42,7 +42,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpDelete("deleteUser")]
-        public IActionResult Delete(User user)
+        public IActionResult Delete(AppUser user)
         {
             var result = userService.Delete(user);
             if (result.Success)
@@ -51,7 +51,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("updateUser")]
-        public IActionResult Update(User user)
+        public IActionResult Update(AppUser user)
         {
             var result = userService.Update(user);
             if (result.Success)

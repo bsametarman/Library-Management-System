@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementSystem.DataAccess.Concrete
 {
-    public class EfUserDal : EfEntityRepositoryBase<User, LibraryContext>, IUserDal
+    public class EfUserDal : EfEntityRepositoryBase<AppUser, LibraryContext>, IUserDal
     {
     }
 }

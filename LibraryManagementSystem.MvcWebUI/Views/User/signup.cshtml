@@ -1,4 +1,4 @@
-﻿@model LibraryManagementSystem.Entities.Concrete.User
+﻿@model LibraryManagementSystem.Entities.Concrete.AppUser
 @{
 }
 
@@ -16,15 +16,15 @@
 			<form method="post" asp-action="SignUp">
 				<div class="row">
 					<div class="col-md-6 mb-3">
-						<label asp-for="UserName">Name</label>
-						<input asp-for="UserName" class="form-control" value="" required>
+						<label asp-for="Name">Name</label>
+						<input asp-for="Name" class="form-control" value="" required>
 						<div class="invalid-feedback">
 							Valid first name is required.
 						</div>
 					</div>
 					<div class="col-md-6 mb-3">
-						<label asp-for="UserSurname">Surname</label>
-						<input asp-for="UserSurname" class="form-control" value="" required>
+						<label asp-for="Surname">Surname</label>
+						<input asp-for="Surname" class="form-control" value="" required>
 						<div class="invalid-feedback">
 							Valid last name is required.
 						</div>

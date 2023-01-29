@@ -10,11 +10,11 @@ namespace LibraryManagementSystem.Business.Abstract
 {
     public interface IUserService
     {
-        IDataResult<List<User>> GetAll();
-        IDataResult<User> GetById(int id);
+        IDataResult<List<AppUser>> GetAll();
+        IDataResult<AppUser> GetById(string id);
         IResult GetByEmailAndPassword(string email, string password);
-        IResult Add(User user);
-        IResult Update(User user);
-        IResult Delete(User user);
+        IResult Add(AppUser user);
+        IResult Update(AppUser user);
+        IResult Delete(AppUser user);
     }
 }

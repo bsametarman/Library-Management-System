@@ -61,7 +61,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("updateUserDebt")]
-        public IActionResult UpdateUserDebt(int userId, decimal amount)
+        public IActionResult UpdateUserDebt(string userId, decimal amount)
         {
             var result = userService.GetById(userId);
             if(result.Data != null)
@@ -69,7 +69,7 @@ namespace WebAPI.Controllers
                 result.Data.Debt -= amount;
                 var updateResult = userService.Update(result.Data);
                 if(updateResult.Success)
-                    return Ok(new SuccessDataResult<User>(result.Data, result.Message));
+                    return Ok(new SuccessDataResult<AppUser>(result.Data, result.Message));
             }
             return BadRequest(result.Message);
         }

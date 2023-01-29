@@ -40,7 +40,7 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult SignUp(User user)
+		public IActionResult SignUp(AppUser user)
 		{
 			if (!ModelState.IsValid)
 				return View(user);

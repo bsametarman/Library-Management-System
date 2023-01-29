@@ -1,4 +1,4 @@
-﻿@model List<LibraryManagementSystem.Entities.Concrete.User>
+﻿@model List<LibraryManagementSystem.Entities.Concrete.AppUser>
 
 @{
 }
@@ -24,7 +24,7 @@
 		<div class="col-md-6">
 			<div class="card mb-4 box-shadow">
 				<div class="card-header">
-					<h4 class="my-0 font-weight-normal">@Model[i].UserName @Model[i].UserSurname</h4>
+					<h4 class="my-0 font-weight-normal">@Model[i].Name @Model[i].Surname</h4>
 				</div>
 				<div class="card-body">
 					<div class="text-center">
@@ -34,7 +34,7 @@
 							<li>Gender: @Model[i].Gender</li>
 							<li>Burrowed book number: @Model[i].BorrowedBookNumber</li>
 							<li>Debt: @Model[i].Debt</li>
-							<li>@Model[i].UserId</li>
+							<li>@Model[i].Id</li>
 						</ul>
 						<button type="button" class="btn btn-lg btn-block btn-outline-primary">Details</button>
 					</div>

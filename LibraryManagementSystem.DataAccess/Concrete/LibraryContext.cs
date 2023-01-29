@@ -1,9 +1,10 @@
 ﻿using LibraryManagementSystem.Entities.Concrete;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagementSystem.DataAccess.Concrete
 {
-    public class LibraryContext : DbContext
+    public class LibraryContext : IdentityDbContext<AppUser>
     {
 
         //public LibraryContext() : base("name=LibraryManagementSystemContext")
@@ -33,6 +34,6 @@ namespace LibraryManagementSystem.DataAccess.Concrete
         public DbSet<Genre> Genres { get; set; }
         public DbSet<Publisher> Publishers { get; set; }
         public DbSet<Translator> Translators { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<AppUser> Users { get; set; }
     }
 }

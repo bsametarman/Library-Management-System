@@ -22,21 +22,21 @@ namespace LibraryManagementSystem.Business.Concrete
             _userDal = userDal;
         }
 
-        public IResult Add(User user)
+        public IResult Add(AppUser user)
         {
             _userDal.Add(user);
             return new SuccessResult("Başarıyla eklendi !!!");
         }
 
-        public IResult Delete(User user)
+        public IResult Delete(AppUser user)
         {
             _userDal.Delete(user);
             return new SuccessResult("Başarıyla silindi !!!");
         }
 
-        public IDataResult<User> GetById(int id)
+        public IDataResult<AppUser> GetById(string id)
         {
-            return new SuccessDataResult<User>(_userDal.Get(u => u.UserId == id), "Başarıyla listelendi !!!");
+            return new SuccessDataResult<AppUser>(_userDal.Get(u => u.Id == id), "Başarıyla listelendi !!!");
         }
 
 		public IResult GetByEmailAndPassword(string email, string password)
@@ -49,12 +49,12 @@ namespace LibraryManagementSystem.Business.Concrete
                 return new ErrorResult("Kişi bulunumadı!!!");
 		}
 
-		public IDataResult<List<User>> GetAll()
+		public IDataResult<List<AppUser>> GetAll()
         {
-            return new SuccessDataResult<List<User>>(_userDal.GetAll(), "Başarıyla listelendi !!!");
+            return new SuccessDataResult<List<AppUser>>(_userDal.GetAll(), "Başarıyla listelendi !!!");
         }
 
-        public IResult Update(User user)
+        public IResult Update(AppUser user)
         {
             _userDal.Update(user);
             return new SuccessResult("Başarıyla güncellendi !!!");
