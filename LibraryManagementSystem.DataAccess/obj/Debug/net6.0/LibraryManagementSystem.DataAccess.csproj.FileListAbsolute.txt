@@ -4,7 +4,6 @@ C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementS
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.DataAccess\obj\Debug\net6.0\LibraryManagementSystem.DataAccess.AssemblyInfo.cs
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.DataAccess\obj\Debug\net6.0\LibraryManagementSystem.DataAccess.csproj.CoreCompileInputs.cache
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.DataAccess\bin\Debug\net6.0\LibraryManagementSystem.DataAccess.deps.json
-C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.DataAccess\bin\Debug\net6.0\LibraryManagementSystem.DataAccess.runtimeconfig.json
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.DataAccess\bin\Debug\net6.0\LibraryManagementSystem.DataAccess.dll
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.DataAccess\bin\Debug\net6.0\LibraryManagementSystem.DataAccess.pdb
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.DataAccess\bin\Debug\net6.0\LibraryManagementSystem.Core.dll
@@ -15,5 +14,4 @@ C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementS
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.DataAccess\obj\Debug\net6.0\LibraryManagementSystem.DataAccess.dll
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.DataAccess\obj\Debug\net6.0\refint\LibraryManagementSystem.DataAccess.dll
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.DataAccess\obj\Debug\net6.0\LibraryManagementSystem.DataAccess.pdb
-C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.DataAccess\obj\Debug\net6.0\LibraryManagementSystem.DataAccess.genruntimeconfig.cache
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.DataAccess\obj\Debug\net6.0\ref\LibraryManagementSystem.DataAccess.dll

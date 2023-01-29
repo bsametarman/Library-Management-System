@@ -6,7 +6,6 @@ C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementS
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Core\bin\Debug\net6.0\LibraryManagementSystem.Core.pssym
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Core\bin\Debug\net6.0\LibraryManagementSystem.Core.pspdb
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Core\bin\Debug\net6.0\LibraryManagementSystem.Core.deps.json
-C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Core\bin\Debug\net6.0\LibraryManagementSystem.Core.runtimeconfig.json
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Core\bin\Debug\net6.0\LibraryManagementSystem.Core.dll
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Core\bin\Debug\net6.0\LibraryManagementSystem.Core.pdb
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Core\bin\Debug\net6.0\LibraryManagementSystem.Entities.dll
@@ -16,5 +15,4 @@ C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementS
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Core\obj\Debug\net6.0\LibraryManagementSystem.Core.csproj.CopyComplete
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Core\obj\Debug\net6.0\LibraryManagementSystem.Core.dll
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Core\obj\Debug\net6.0\LibraryManagementSystem.Core.pdb
-C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Core\obj\Debug\net6.0\LibraryManagementSystem.Core.genruntimeconfig.cache
 C:\Users\bsame\Desktop\Projeler vs\C#\LibraryManagementSystem\LibraryManagementSystem.Core\obj\Debug\net6.0\PostSharp\postsharp.app.config

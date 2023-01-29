@@ -1,11 +1,7 @@
 ﻿using LibraryManagementSystem.Entities.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace LibraryManagementSystem.Core.DataAccess.EntityFramework
 {
@@ -53,8 +49,11 @@ namespace LibraryManagementSystem.Core.DataAccess.EntityFramework
                 //}
                 //catch (Exception e)
                 //{
-
-	            return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList();
+                if (filter == null)
+					return context.Set<TEntity>().ToList();
+				else
+					return context.Set<TEntity>().Where(filter).ToList();
+	            
                 //}
             }
         }

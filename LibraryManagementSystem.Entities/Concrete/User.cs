@@ -1,6 +1,7 @@
 ﻿using LibraryManagementSystem.Entities.Abstract;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace LibraryManagementSystem.Entities.Concrete
 {
     public class User : IEntity
     {
+        [Key]
         public int UserId { get; set; }
         //public List<int>? CurrentBookId { get; set; } = new List<int>();
         //public List<int>? PastBookId { get; set; } = new List<int>();

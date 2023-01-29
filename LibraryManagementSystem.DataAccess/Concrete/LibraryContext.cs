@@ -1,35 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data.Entity;
-using System.Diagnostics;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
-using LibraryManagementSystem.Entities.Concrete;
-using System.Data.Entity;
+﻿using LibraryManagementSystem.Entities.Concrete;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagementSystem.DataAccess.Concrete
 {
     public class LibraryContext : DbContext
     {
 
-        public LibraryContext() : base("name=LibraryManagementSystemContext")
-        {
-            this.Configuration.LazyLoadingEnabled = false;
-        }
+        //public LibraryContext() : base("name=LibraryManagementSystemContext")
+        //{
+        //    this.Configuration.LazyLoadingEnabled = false;
+        //}
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            // Configration for combining db tables (not being used anymore)
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //    Configration for combining db tables(not being used anymore)
 
-            //modelBuilder.Entity<Author>()
-            //    .HasMany(a => a.Books)
-            //    .WithRequired(b => b.Author)
-            //    .HasForeignKey(b => b.AuthorId);
+
+        //   modelBuilder.Entity<Author>()
+        //       .HasMany(a => a.Books)
+        //       .WithRequired(b => b.Author)
+        //       .HasForeignKey(b => b.AuthorId);
+        //}
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = LibraryManagementSystem; Integrated Security = true;");
         }
 
         public DbSet<Book> Books { get; set; }
