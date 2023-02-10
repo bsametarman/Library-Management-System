@@ -25,7 +25,7 @@ namespace LibraryManagementSystem.DataAccess.Concrete
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source = (localdb)\MSSQLLocalDB; Initial Catalog = LibraryManagementSystem; Integrated Security = true;");
+            optionsBuilder.UseSqlServer(@"Data Source = localhost\SQLEXPRESS; Initial Catalog = LibraryManagementSystem; Integrated Security = true; Trust Server Certificate=true;");
         }
 
         public DbSet<Book> Books { get; set; }

@@ -25,6 +25,7 @@ namespace LibraryManagementSystem.Entities.Concrete
         public DateTime CreatedDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         public bool IsActive { get; set; }
+        public string UserRole { get; set; }
 
     }
 }
