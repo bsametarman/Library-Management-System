@@ -2,11 +2,13 @@
 using LibraryManagementSystem.Core.Utilities.Roles;
 using LibraryManagementSystem.Entities.Concrete;
 using LibraryManagementSystem.MvcWebUI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryManagementSystem.MvcWebUI.Controllers
 {
+	[Authorize]
 	public class AccountController : Controller
 	{
 		private UserManager<AppUser> _userManager;
@@ -17,17 +19,26 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
 			_userManager = userManager;
 			_signInManager = signInManager;
 		}
+
+		[AllowAnonymous]
 		public IActionResult SignIn()
 		{
 			return View();
 		}
 
+		[AllowAnonymous]
 		public IActionResult SignUp()
 		{
 			return View();
 		}
 
+		public IActionResult Dashboard()
+		{
+			return View();
+		}
+
 		[HttpPost]
+		[AllowAnonymous]
 		public async Task<IActionResult> SignUp(UserRegisterViewModel userCredentials)
 		{
 			if (!ModelState.IsValid)
@@ -48,11 +59,13 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
 				BirthYear = userCredentials.BirthYear,
 				PhoneNumber = userCredentials.PhoneNumber,
 				Gender = userCredentials.Gender,
+				UserName = userCredentials.Name,
 				IsActive = true,
 				CreatedDate = DateTime.Now,
 				ExpirationDate = DateTime.Now.AddYears(1),
 				Debt = 0,
 				BorrowedBookNumber = 0,
+				EmailConfirmed = true,
 				UserRole = "user"
 			};
 
@@ -61,6 +74,7 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
 			if (result.Succeeded)
 			{
 				await _userManager.AddToRoleAsync(user, UserRoles.User);
+				await _signInManager.PasswordSignInAsync(user, user.Password, false, false);
 				return RedirectToAction("Index", "Home");
 			}
 			else
@@ -74,6 +88,7 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
 		}
 
 		[HttpPost]
+		[AllowAnonymous]
 		public async Task<IActionResult> SignIn(UserSignInViewModel model)
 		{
 			if (!ModelState.IsValid)
@@ -101,6 +116,12 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
 				}
 			}
 			return RedirectToAction("SignIn");
+		}
+
+		public async Task<IActionResult> LogOut()
+		{
+			await _signInManager.SignOutAsync();
+			return RedirectToAction("Index", "Home");
 		}
 	}
 }

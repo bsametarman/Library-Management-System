@@ -2,6 +2,9 @@ using LibraryManagementSystem.Business.Abstract;
 using LibraryManagementSystem.Business.Concrete;
 using LibraryManagementSystem.DataAccess.Abstract;
 using LibraryManagementSystem.DataAccess.Concrete;
+using LibraryManagementSystem.Entities.Concrete;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +25,47 @@ builder.Services.AddTransient<IGenreDal, EfGenreDal>();
 builder.Services.AddTransient<IEmployeeService, EmployeeManager>();
 builder.Services.AddTransient<IEmployeeDal, EfEmployeeDal>();
 
+builder.Services.AddDbContext<LibraryContext>();
+
+builder.Services.AddIdentity<AppUser, IdentityRole>()
+    .AddEntityFrameworkStores<LibraryContext>();
+
+builder.Services.AddMemoryCache();
+builder.Services.AddSession();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.Cookie.Expiration = TimeSpan.FromMinutes(30);
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+        options.LoginPath = "/Account/Login";
+        options.LogoutPath = "/Account/Logout";
+    });
+
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    // Default Lockout settings.
+    options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+    options.Lockout.MaxFailedAccessAttempts = 5;
+    options.Lockout.AllowedForNewUsers = true;
+
+    // Default Password settings.
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 6;
+    options.Password.RequiredUniqueChars = 1;
+});
+
 var app = builder.Build();
+
+if (args.Length == 1 && args[0].ToLower() == "seeddata")
+{
+    await Seed.SeedAdminAndRoleAsync(app);
+}
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -30,6 +73,8 @@ if (!app.Environment.IsDevelopment())
 	app.UseExceptionHandler("/Home/Error");
 }
 app.UseStaticFiles();
+
+app.UseAuthentication();
 
 app.UseRouting();
 

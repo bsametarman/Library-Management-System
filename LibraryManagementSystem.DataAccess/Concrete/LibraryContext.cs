@@ -28,6 +28,7 @@ namespace LibraryManagementSystem.DataAccess.Concrete
             optionsBuilder.UseSqlServer(@"Data Source = localhost\SQLEXPRESS; Initial Catalog = LibraryManagementSystem; Integrated Security = true; Trust Server Certificate=true;");
         }
 
+        public DbSet<AppUser> AspNetUsers { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Employee> Employees { get; set; }

@@ -1,16 +1,14 @@
-﻿@model LibraryManagementSystem.Entities.Concrete.AppUser
+﻿@model UserRegisterViewModel
 @{
 }
 
 <div class="container">
 	<div class="py-5 text-center">
-	@*<img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">*@
+		@*<img class="d-block mx-auto mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">*@
 	<h2>Sign Up</h2>
 	</div>
 
 	<div class="row">
-
-
 		<div class="col-md-12 order-md-1">
 			<h4 class="mb-3">User Informations</h4>
 			<form method="post" asp-action="SignUp">
@@ -30,7 +28,10 @@
 						</div>
 					</div>
 				</div>
-
+				<div class="mb-3">
+					<label asp-for="Email">Email<span class="text-muted"></span></label>
+					<input asp-for="Email" class="form-control">
+				</div>
 				<div class="mb-3">
 					<label asp-for="Password">Password</label>
 					<div class="input-group">
@@ -70,11 +71,6 @@
 				<div class="mb-3">
 					<label asp-for="PhoneNumber">Phone Number<span class="text-muted"></span></label>
 					<input asp-for="PhoneNumber" class="form-control">
-				</div>
-
-				<div class="mb-3">
-					<label asp-for="Email">Email<span class="text-muted"></span></label>
-					<input asp-for="Email" class="form-control">
 				</div>
 
 				<div class="d-flex justify-content-center">
