@@ -37,7 +37,36 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
 			return View();
 		}
 
-		[HttpPost]
+        public IActionResult ModeratorRegister()
+        {
+            return View();
+        }
+
+        public IActionResult UserRoleChange(string id)
+        {
+            ViewBag.Id = id;
+            return View();
+        }
+
+        public IActionResult UserExtendTime(string id)
+        {
+            ViewBag.Id = id;
+            return View();
+        }
+
+        public IActionResult UserPasswordChange(string id)
+        {
+            ViewBag.Id = id;
+            return View();
+        }
+
+        public IActionResult UserUsernameChange(string id)
+        {
+            ViewBag.Id = id;
+            return View();
+        }
+
+        [HttpPost]
 		[AllowAnonymous]
 		public async Task<IActionResult> SignUp(UserRegisterViewModel userCredentials)
 		{
@@ -118,7 +147,163 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
 			return RedirectToAction("SignIn");
 		}
 
-		public async Task<IActionResult> LogOut()
+        [HttpPost]
+        public async Task<IActionResult> ModeratorRegister(UserRegisterViewModel userCredentials)
+        {
+            if (ModelState.IsValid)
+            {
+                var findUser = await _userManager.FindByEmailAsync(userCredentials.Email);
+
+                if (findUser != null)
+                    return View(userCredentials);
+
+                AppUser user = new AppUser
+                {
+                    Name = userCredentials.Name,
+                    Surname = userCredentials.Surname,
+                    IdentityNumber = userCredentials.IdentityNumber,
+                    Email = userCredentials.Email,
+                    Password = userCredentials.Password,
+                    BirthYear = userCredentials.BirthYear,
+                    PhoneNumber = userCredentials.PhoneNumber,
+                    Gender = userCredentials.Gender,
+                    UserName = userCredentials.Name,
+                    IsActive = true,
+                    CreatedDate = DateTime.Now,
+                    ExpirationDate = DateTime.Now.AddYears(1),
+                    Debt = 0,
+                    BorrowedBookNumber = 0,
+                    EmailConfirmed = true,
+                    UserRole = "moderator"
+                };
+
+                var result = await _userManager.CreateAsync(user, userCredentials.Password);
+
+                if (result.Succeeded)
+                {
+                    await _userManager.AddToRoleAsync(user, UserRoles.Moderator);
+                    return RedirectToAction("AdminList", "Dashboard");
+                }
+                else
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
+                }
+            }
+            return View(userCredentials);
+        }
+
+        public async Task<IActionResult> EditActiveState(string id)
+        {
+            if (User.IsInRole("admin"))
+            {
+                var user = await _userManager.FindByIdAsync(id);
+
+                if (user == null)
+                {
+                    return View("Not Found");
+                }
+                if (user.IsActive == true)
+                {
+                    user.IsActive = false;
+                }
+                else
+                {
+                    user.IsActive = true;
+                }
+
+                await _userManager.UpdateAsync(user);
+                return RedirectToAction("Index", "Dashboard");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+        public async Task<IActionResult> DeleteUser(string id)
+        {
+            if (User.IsInRole("admin"))
+            {
+                var user = await _userManager.FindByIdAsync(id);
+
+                if (user == null)
+                {
+                    return View("Not Found");
+                }
+
+                await _userManager.DeleteAsync(user);
+                return RedirectToAction("Index", "Dashboard");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+        public async Task<IActionResult> ExtendTime(string id, int dayToExtend)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null)
+                return View(id);
+
+            user.ExpirationDate = user.ExpirationDate.AddDays(dayToExtend);
+            await _userManager.UpdateAsync(user);
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        public async Task<IActionResult> PasswordChange(string id, string password)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null)
+                return View(id);
+
+            user.Password = password;
+            user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, password);
+            await _userManager.UpdateAsync(user);
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        public async Task<IActionResult> UsernameChange(string id, string username)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null)
+                return View(id);
+
+            user.UserName = username;
+            await _userManager.UpdateAsync(user);
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        public async Task<IActionResult> RoleChange(string id, string role)
+        {
+            List<string> roles = new List<string>() { "user", "moderator", "admin"};
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null)
+                return View(id);
+
+            foreach (var roleitem in roles)
+            {
+                await _userManager.RemoveFromRoleAsync(user, roleitem);
+            }
+
+            user.UserRole = role;
+            await _userManager.AddToRoleAsync(user, role);
+            await _userManager.UpdateAsync(user);
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        public async Task<IActionResult> LogOut()
 		{
 			await _signInManager.SignOutAsync();
 			return RedirectToAction("Index", "Home");

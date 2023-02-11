@@ -1,0 +1,70 @@
+﻿@model List<LibraryManagementSystem.Entities.Concrete.AppUser>
+@{
+}
+
+@if (User.IsInRole("admin"))
+{
+
+    <h1>Authorized Users</h1>
+
+    <div class="btn-group" style="margin-top: 10%">
+        <div style="margin-right: 20px">
+            <a asp-area="" asp-controller="Account" asp-action="SignUp" class="btn btn-outline-success btn-lg">Add User</a>
+        </div>
+        <div style="margin-right: 20px">
+            <a asp-area="" asp-controller="Account" asp-action="ModeratorRegister" class="btn btn-outline-success btn-lg">Add Moderator</a>
+        </div>
+        <div style="">
+            <a asp-area="" asp-controller="Dashboard" asp-action="AdminList" class="btn btn-outline-success btn-lg">Show Authorized Users</a>
+        </div>
+    </div>
+
+    <div class="table-responsive" style="margin-top: 10%">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <div class="card mb-3">
+                <div class="card-header">
+                    User Id: @Model[i].Id
+                </div>
+                <div class="card-body">
+                    <div class="card-title">
+                        <strong>Name: </strong> @Model[i].Name @Model[i].Surname |
+                        <strong>Email: </strong> @Model[i].Email |
+                        @if (User.IsInRole("admin"))
+                        {
+                            <strong> Password: </strong> 
+                            @Model[i].Password
+                        }
+                        | <strong>Created Date: </strong> @Model[i].CreatedDate | 
+                        <strong>Expiration Date: </strong> @Model[i].ExpirationDate | 
+                        <strong>Left Days: </strong> @(
+                        Model[i].ExpirationDate.Subtract(DateTime.Now).Days
+                        ) |
+                        @if (@Model[i].IsActive == true)
+                        {
+                            <strong>Active State: </strong> <a style="color: green; font-size: 20px">@Model[i].IsActive </a>
+                        }
+                        else
+                        {
+                            <strong>Active State: </strong> <a style="color: red; font-size: 20px">@Model[i].IsActive </a>
+                        }
+                    </div>
+                </div>
+
+                <div class="card-footer">
+                    <a asp-route-id="@Model[i].Id" asp-controller="Account" asp-action="EditActiveState" class="btn btn-outline-warning btn-lg">Active State</a>
+                    <a asp-route-id="@Model[i].Id" asp-controller="Account" asp-action="DeleteUser" class="btn btn-outline-danger btn-lg">Delete</a>
+                    <a asp-route-id="@Model[i].Id" asp-controller="Account" asp-action="ExtendTime" class="btn btn-outline-success btn-lg">Extend Time</a>
+                    <a asp-route-id="@Model[i].Id" asp-controller="Account" asp-action="PasswordChange" class="btn btn-outline-primary btn-lg">Change Password</a>
+                    <a asp-route-id="@Model[i].Id" asp-controller="Account" asp-action="UsernameChange" class="btn btn-outline-secondary btn-lg">Change Email</a>
+                    <a asp-route-id="@Model[i].Id" asp-controller="Account" asp-action="UserRoleChange" class="btn btn-outline-warning btn-lg">Change Role</a>
+                </div>
+
+            </div>
+        }
+    </div>
+}
+else
+{
+    <h1>You are NOT Authorized!!!</h1>
+}
