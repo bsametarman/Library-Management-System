@@ -43,6 +43,12 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
             return View();
         }
 
+        public IActionResult EmailChange(string id)
+        {
+            ViewBag.Id = id;
+            return View();
+        }
+
         public IActionResult ExtendTime(string id)
         {
             ViewBag.Id = id;
@@ -191,7 +197,6 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
 
         public async Task<IActionResult> EditActiveState(string id)
         {
-            
             var user = await _userManager.FindByIdAsync(id);
 
             if (user == null)
@@ -229,6 +234,19 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
+        }
+
+        public async Task<IActionResult> UserEmailChange(string id, string email)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null)
+                return View(id);
+
+            user.Email = email;
+            await _userManager.UpdateAsync(user);
+
+            return RedirectToAction("Index", "Dashboard");
         }
 
         public async Task<IActionResult> UserExtendTime(string id, int dayToExtend)
