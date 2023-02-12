@@ -77,7 +77,7 @@
                     <a asp-route-id="@Model[i].Id" asp-controller="Account" asp-action="ExtendTime" class="btn btn-outline-success btn-lg">Extend Time</a>
                     <a asp-route-id="@Model[i].Id" asp-controller="Account" asp-action="PasswordChange" class="btn btn-outline-primary btn-lg">Change Password</a>
                     <a asp-route-id="@Model[i].Id" asp-controller="Account" asp-action="UsernameChange" class="btn btn-outline-secondary btn-lg">Change Email</a>
-                    <a asp-route-id="@Model[i].Id" asp-controller="Account" asp-action="UserRoleChange" class="btn btn-outline-warning btn-lg">Change Role</a>
+                    <a asp-route-id="@Model[i].Id" asp-controller="Account" asp-action="RoleChange" class="btn btn-outline-warning btn-lg">Change Role</a>
                 </div>
             }
             @if (User.IsInRole("moderator"))

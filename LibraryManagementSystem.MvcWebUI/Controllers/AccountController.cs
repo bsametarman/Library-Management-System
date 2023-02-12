@@ -191,30 +191,24 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
 
         public async Task<IActionResult> EditActiveState(string id)
         {
-            if (User.IsInRole("admin"))
+            
+            var user = await _userManager.FindByIdAsync(id);
+
+            if (user == null)
             {
-                var user = await _userManager.FindByIdAsync(id);
-
-                if (user == null)
-                {
-                    return View("Not Found");
-                }
-                if (user.IsActive == true)
-                {
-                    user.IsActive = false;
-                }
-                else
-                {
-                    user.IsActive = true;
-                }
-
-                await _userManager.UpdateAsync(user);
-                return RedirectToAction("Index", "Dashboard");
+                return View("Not Found");
+            }
+            if (user.IsActive == true)
+            {
+                user.IsActive = false;
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                user.IsActive = true;
             }
+
+            await _userManager.UpdateAsync(user);
+            return RedirectToAction("Index", "Dashboard");
         }
 
         public async Task<IActionResult> DeleteUser(string id)
