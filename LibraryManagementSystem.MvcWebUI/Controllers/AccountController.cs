@@ -32,35 +32,30 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
 			return View();
 		}
 
-		public IActionResult Dashboard()
-		{
-			return View();
-		}
-
         public IActionResult ModeratorRegister()
         {
             return View();
         }
 
-        public IActionResult UserRoleChange(string id)
+        public IActionResult RoleChange(string id)
         {
             ViewBag.Id = id;
             return View();
         }
 
-        public IActionResult UserExtendTime(string id)
+        public IActionResult ExtendTime(string id)
         {
             ViewBag.Id = id;
             return View();
         }
 
-        public IActionResult UserPasswordChange(string id)
+        public IActionResult PasswordChange(string id)
         {
             ViewBag.Id = id;
             return View();
         }
 
-        public IActionResult UserUsernameChange(string id)
+        public IActionResult UsernameChange(string id)
         {
             ViewBag.Id = id;
             return View();
@@ -103,7 +98,6 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
 			if (result.Succeeded)
 			{
 				await _userManager.AddToRoleAsync(user, UserRoles.User);
-				await _signInManager.PasswordSignInAsync(user, user.Password, false, false);
 				return RedirectToAction("Index", "Home");
 			}
 			else
@@ -243,7 +237,7 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
             }
         }
 
-        public async Task<IActionResult> ExtendTime(string id, int dayToExtend)
+        public async Task<IActionResult> UserExtendTime(string id, int dayToExtend)
         {
             var user = await _userManager.FindByIdAsync(id);
 
@@ -256,7 +250,7 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
             return RedirectToAction("Index", "Dashboard");
         }
 
-        public async Task<IActionResult> PasswordChange(string id, string password)
+        public async Task<IActionResult> UserPasswordChange(string id, string password)
         {
             var user = await _userManager.FindByIdAsync(id);
 
@@ -270,7 +264,7 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
             return RedirectToAction("Index", "Dashboard");
         }
 
-        public async Task<IActionResult> UsernameChange(string id, string username)
+        public async Task<IActionResult> UserUsernameChange(string id, string username)
         {
             var user = await _userManager.FindByIdAsync(id);
 
@@ -283,7 +277,7 @@ namespace LibraryManagementSystem.MvcWebUI.Controllers
             return RedirectToAction("Index", "Dashboard");
         }
 
-        public async Task<IActionResult> RoleChange(string id, string role)
+        public async Task<IActionResult> UserRoleChange(string id, string role)
         {
             List<string> roles = new List<string>() { "user", "moderator", "admin"};
             var user = await _userManager.FindByIdAsync(id);
